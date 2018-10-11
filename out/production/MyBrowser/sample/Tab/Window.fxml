@@ -1,0 +1,33 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.layout.VBox?>
+<Tab fx:controller="sample.Tab.Controller"
+     xmlns:fx="http://javafx.com/fxml"
+     fx:id="tabView">
+    <BorderPane
+                maxHeight="Infinity" maxWidth="Infinity">
+        <top>
+            <VBox>
+                <ToolBar fx:id="toolbar">
+                    <Button text="back" onAction="#previousPage"
+                            fx:id="backButton"/>
+                    <Button text="forward" onAction="#nextPage"
+                            fx:id="forwardButton"/>
+                    <Button text="GO" onAction="#searchForPage"/>
+                    <Button text="HOME" onAction="#goToHomePage"/>
+                    <Slider min="0.5" max="2" value="1.25" fx:id="sliderZoom"
+                            onMouseDragged="#zoomView"
+                            onMouseClicked="#zoomView"/>
+                    <Button text="showHistory" onAction="#printHistory"/>
+
+                    <ProgressBar fx:id="progressBar"/>
+
+                </ToolBar>
+            </VBox>
+        </top>
+        <center>
+            <WebView fx:id="browser"  />
+        </center>
+    </BorderPane>
+</Tab>
